@@ -1,21 +1,33 @@
 from django.http import HttpResponse
 import datetime
 
+from django.template import Template, Context
+
+
 #Esta es una funcion vista o la primera vista
 def saludo(request):
-    #una forma as elegane es crear una variable y meter el html dentro
 
-    # documento = "<body><h1>Hola alumnos de pildoras Informaticas</h1></body></html>"
+    # doc_externo = open("/djangoPildoras/djangoPildoras/plantillas/miplantilla.html")
+    # doc_externo = open("/Users/ela/Desktop/DEVELOPER/DJANGO/LEARNING/djangoPildoras/djangoPildoras/plantillas/ ")
+    doc_externo = open("/Users/ela/Desktop/DEVELOPER/DJANGO/LEARNING/djangoPildoras/djangoPildoras/plantillas/miplantilla.html")
 
-    # return HttpResponse(documento)
+    # doc_externo = open("djangoPildoras/djangoPildoras/plantillas/miplantilla.html")
 
-    documento = """
-    <body>
-    <h1>Hola alumnos de pildoras Informaticas forma 2</h1>
-    </body>
-    </html> """
-
+    plantilla = Template(doc_externo.read())
+    doc_externo.close()
+    Contexto = Context()
+    documento = plantilla.render(Contexto)
     return HttpResponse(documento)
+
+# def saludo(request):    #Primera Vista
+#     #Plantilla
+#     doc_externo = open("D:/Curso_Django/Proyecto1/Proyecto1/plantillas/saludo.html")
+#     plantilla = Template(doc_externo.read())
+#     doc_externo.close()
+#     contexto = Context()
+#     documento = plantilla.render(contexto)
+#     return HttpResponse(documento)
+
 
 def despedida(request):
     return HttpResponse("Despedida")
