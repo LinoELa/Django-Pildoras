@@ -17,6 +17,21 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+#from <carpeta.archivo> import <funcion>,<funcion2>
+from djangoPildoras.views import saludo,despedida, dameFecha, calculaEdad, calculaEdad_2
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('saludo/', saludo),
+    #el nombre de la url puede ser diferente al de la funcion
+    path('nosvemos/', despedida),  #despedida es diferente a lo  URL= nosVemos
+
+    path('fecha/', dameFecha),
+    # una forma de pasar la url a entero > es poniendole ( : ) delante
+    path('edades/<int:axo>', calculaEdad),
+
+    # Otra forma de de recibir paramtro por URL
+    path('edades/<int:edad>/<int:axo>', calculaEdad_2)
+    
 ]
