@@ -7,26 +7,21 @@ from django.template import Template, Context
 #Esta es una funcion vista o la primera vista
 def saludo(request):
 
-    # doc_externo = open("/djangoPildoras/djangoPildoras/plantillas/miplantilla.html")
-    # doc_externo = open("/Users/ela/Desktop/DEVELOPER/DJANGO/LEARNING/djangoPildoras/djangoPildoras/plantillas/ ")
+    #nombre 
+    nombre = "Juan"
+    apellido = "Ndumu Osa"
+
     doc_externo = open("/Users/ela/Desktop/DEVELOPER/DJANGO/LEARNING/djangoPildoras/djangoPildoras/plantillas/miplantilla.html")
 
     # doc_externo = open("djangoPildoras/djangoPildoras/plantillas/miplantilla.html")
 
     plantilla = Template(doc_externo.read())
     doc_externo.close()
-    Contexto = Context()
+    Contexto = Context({"nombre_persona":nombre, "apellido_persona":apellido})
     documento = plantilla.render(Contexto)
     return HttpResponse(documento)
+ 
 
-# def saludo(request):    #Primera Vista
-#     #Plantilla
-#     doc_externo = open("D:/Curso_Django/Proyecto1/Proyecto1/plantillas/saludo.html")
-#     plantilla = Template(doc_externo.read())
-#     doc_externo.close()
-#     contexto = Context()
-#     documento = plantilla.render(contexto)
-#     return HttpResponse(documento)
 
 
 def despedida(request):
