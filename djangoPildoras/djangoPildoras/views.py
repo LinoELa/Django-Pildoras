@@ -11,13 +11,16 @@ def saludo(request):
     nombre = "Juan"
     apellido = "Ndumu Osa"
 
+    fecha_actual = datetime.datetime.now()
+
+
     doc_externo = open("/Users/ela/Desktop/DEVELOPER/DJANGO/LEARNING/djangoPildoras/djangoPildoras/plantillas/miplantilla.html")
 
     # doc_externo = open("djangoPildoras/djangoPildoras/plantillas/miplantilla.html")
 
     plantilla = Template(doc_externo.read())
     doc_externo.close()
-    Contexto = Context({"nombre_persona":nombre, "apellido_persona":apellido})
+    Contexto = Context({"nombre_persona":nombre, "apellido_persona":apellido, "hora_actual":fecha_actual})
     documento = plantilla.render(Contexto)
     return HttpResponse(documento)
  

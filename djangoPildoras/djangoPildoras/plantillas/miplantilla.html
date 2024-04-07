@@ -13,6 +13,14 @@
     <h2 style="color:red;">Cambio de color </h2>
 <!-- traer o rescatar la clave dee views aqui  -->
     <p>El nombre del profesor es : {{nombre_persona}} {{apellido_persona}} </p>
+
+    <p>Dia actual : {{hora_actual}}</p>
+    <!-- Acceder a las propiedades dentro del diccionario -->
+            <!-- Solo acceder al dia al dia -->
+    <p>Dia Unicamente actual : {{hora_actual.day}}</p>
+    
+    <!-- Solo acceder al dia al hora minuto y segundo -->
+    <p>Hora Unicamente actual : {{hora_actual.hour}}:{{hora_actual.minute}}:{{hora_actual.second}} </p>
     
 </body>
 </html>
