@@ -3,13 +3,27 @@ import datetime
 
 from django.template import Template, Context
 
+# usando la programacion orientada  a objetos 
+
+class Persona(object):
+    def __init__(self, nombre , apellido):
+        self.nombre = nombre 
+        self.apellido = apellido
+        
+
+
 
 #Esta es una funcion vista o la primera vista
 def saludo(request):
 
-    #nombre 
-    nombre = "Juan"
-    apellido = "Ndumu Osa"
+
+    #nombre  --> Comentamos todo eso para mostras lo siguiente 
+    # nombre = "Juan"
+    # apellido = "Ndumu Osa"
+
+    # --> Comentamos todo eso para mostras lo siguiente
+
+    p1 = Persona("Profesor Juan", "Edaman")
 
     fecha_actual = datetime.datetime.now()
 
@@ -20,7 +34,7 @@ def saludo(request):
 
     plantilla = Template(doc_externo.read())
     doc_externo.close()
-    Contexto = Context({"nombre_persona":nombre, "apellido_persona":apellido, "hora_actual":fecha_actual})
+    Contexto = Context({"nombre_persona":p1.nombre, "apellido_persona":p1.apellido, "hora_actual":fecha_actual,"temas":["Plantillas", "Modelos", "Formularios", "Vistas", "Despliegues"]})
     documento = plantilla.render(Contexto)
     return HttpResponse(documento)
  

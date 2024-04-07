@@ -11,7 +11,7 @@
     <h1>Mi programa en Django</h1>
 
     <h2 style="color:red;">Cambio de color </h2>
-<!-- traer o rescatar la clave dee views aqui  -->
+    <!-- traer o rescatar la clave dee views aqui  -->
     <p>El nombre del profesor es : {{nombre_persona}} {{apellido_persona}} </p>
 
     <p>Dia actual : {{hora_actual}}</p>
@@ -21,6 +21,13 @@
     
     <!-- Solo acceder al dia al hora minuto y segundo -->
     <p>Hora Unicamente actual : {{hora_actual.hour}}:{{hora_actual.minute}}:{{hora_actual.second}} </p>
+
+
+    <!-- Rescatar la informacion de lo : "TEMAS" -->
+    <p>{{temas}}</p>
+    <!-- Acceder al primero elemento de temas  -->
+    <p> {{temas.1}}  </p>
+
     
 </body>
 </html>
