@@ -28,6 +28,33 @@
     <!-- Acceder al primero elemento de temas  -->
     <p> {{temas.1}}  </p>
 
+
+    <!-- Para poder hace una lista que recore todos los datos y creara un "BUCLE" -->
+
+     <!-- FOR : Usando el bucle for -->
+    <p> 
+        <ul>
+
+            {% for elTema in temas %}
+
+            <!-- Formas de hacer que aparezca el bucle -->
+            <!-- en linea recta : Quitamos ul -->
+            <!-- {{elTema}} -->
+            
+            <!-- en linea horizontal: Quitamos ul -->
+            <!-- <p>
+                {{elTema}}
+            </p> -->
+            
+            <!-- En una lista  -->
+
+            <li>{{elTema}}</li>
+            
+            
+            
+            {% endfor %}
+        </ul>
+    </p>
     
 </body>
 </html>

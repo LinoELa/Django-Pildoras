@@ -23,6 +23,8 @@ def saludo(request):
 
     # --> Comentamos todo eso para mostras lo siguiente
 
+    temas_del_curso = ["Plantillas", "Modelos", "Formularios", "Vistas", "Despliegues"]
+
     p1 = Persona("Profesor Juan", "Edaman")
 
     fecha_actual = datetime.datetime.now()
@@ -34,7 +36,7 @@ def saludo(request):
 
     plantilla = Template(doc_externo.read())
     doc_externo.close()
-    Contexto = Context({"nombre_persona":p1.nombre, "apellido_persona":p1.apellido, "hora_actual":fecha_actual,"temas":["Plantillas", "Modelos", "Formularios", "Vistas", "Despliegues"]})
+    Contexto = Context({"nombre_persona":p1.nombre, "apellido_persona":p1.apellido, "hora_actual":fecha_actual,"temas":temas_del_curso})
     documento = plantilla.render(Contexto)
     return HttpResponse(documento)
  

@@ -28,6 +28,10 @@ El video 7 se enfoca en los buvles y condicionales en planntillas  y sus puntos 
 
 ###Llamadas a plantillas 
     Jerarquia u orden en llamadas desde plantillas
+        .Diccionario
+        .Atributo
+        .Metodo
+        .indice de lista
 
 ###uso de listas en contexto y plantillas 
 
