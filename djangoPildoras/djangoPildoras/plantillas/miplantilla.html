@@ -11,12 +11,34 @@
     <h1>Mi programa en Django</h1>
 
     <h2 style="color:red;">Cambio de color </h2>
-    <!-- traer o rescatar la clave dee views aqui  -->
-    <p>El nombre del profesor es : {{nombre_persona}} {{apellido_persona}} </p>
+    <!-- 
+    Traer o rescatar la clave dee views aqui  
+    METODO : Las llamadas en python no tiene nos () normales de lo metodos 
+    Normal seria  .upper() =={en pyton es } == .upper
+     -->
+     <!-- PONIENDO CONDICION : if else  -->
+
+     {#cementario de una linea#}
+
+     {% comment %} 
+     Comentarios de varias lineas asi se hacen 
+     a final de todo se tiene que cerrar 
+     {% endcomment %}
+     {% if nombre_persona == 'Profesor Juan' %}
+
+     <p>El nombre del profesor es : {{nombre_persona.upper}} {{apellido_persona}} </p>
+
+    <!-- No que quremos que ocura si no sucede el primer if -->
+     {% else %}
+     <p>El curso lo imparte el profesor supliente</p>
+
+     {% endif %}
 
     <p>Dia actual : {{hora_actual}}</p>
     <!-- Acceder a las propiedades dentro del diccionario -->
             <!-- Solo acceder al dia al dia -->
+            <!-- day : Es un propiedad y no un metodo aunque sintacticamente 
+            tenagan la misma estructura. -->
     <p>Dia Unicamente actual : {{hora_actual.day}}</p>
     
     <!-- Solo acceder al dia al hora minuto y segundo -->
@@ -31,28 +53,37 @@
 
     <!-- Para poder hace una lista que recore todos los datos y creara un "BUCLE" -->
 
+
+
      <!-- FOR : Usando el bucle for -->
+     <p><strong>Temas del curso:</strong></p>
     <p> 
         <ul>
-
-            {% for elTema in temas %}
-
-            <!-- Formas de hacer que aparezca el bucle -->
-            <!-- en linea recta : Quitamos ul -->
-            <!-- {{elTema}} -->
+            {% if temas %}
             
-            <!-- en linea horizontal: Quitamos ul -->
-            <!-- <p>
+                {% for elTema in temas %}
+            
+                <!-- Formas de hacer que aparezca el bucle -->
+                <!-- en linea recta : Quitamos ul -->
+                <!-- {{elTema}} -->
+            
+                <!-- en linea horizontal: Quitamos ul -->
+                <!-- <p>
                 {{elTema}}
-            </p> -->
+                </p> -->
             
-            <!-- En una lista  -->
+                <!-- En una lista  -->
 
-            <li>{{elTema}}</li>
+                <!-- Filtro -->
+            
+                <li>{{elTema  | first | lower }}</li>
             
             
             
-            {% endfor %}
+                {% endfor %}
+            {% else %}
+                <p>No hay elementos que mostrar porque lista (temas_del_curso) esta vacia</p>
+            {% endif %}
         </ul>
     </p>
     

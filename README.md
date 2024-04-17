@@ -1,4 +1,4 @@
-# Django-Pildororas
+# Django-Pildoras
 
 # Video 5 : Plantilla I
 
@@ -36,3 +36,72 @@ El video 7 se enfoca en los buvles y condicionales en planntillas  y sus puntos 
 ###uso de listas en contexto y plantillas 
 
 ###Estructura de contro de flujo (Bucles y condicionales)
+
+
+si que es posible anidar todo en bucles : for , if , while y mas.
+
+##Ejemplos de cada tipo de elemento
+
+###Diccionario 
+-->Diccionario que mapea nombres de frutas a sus colores
+
+frutas_colores = {
+    "manzana": "rojo",
+    "plátano": "amarillo",
+    "naranja": "naranja"
+}
+
+-->Accediendo al valor asociado a una clave
+print(frutas_colores["manzana"])  # Salida: rojo
+
+###Atributo 
+class Perro:
+    def __init__(self, nombre, raza):
+        self.nombre = nombre  # Atributo nombre
+        self.raza = raza  # Atributo raza
+
+-->Creando una instancia de la clase Perro
+mi_perro = Perro("Max", "Labrador")
+
+-->Accediendo a los atributos de la instancia
+print(mi_perro.nombre)  # Salida: Max
+print(mi_perro.raza)    # Salida: Labrador
+
+###Metodo
+
+--> .upper() : 
+--> .lower() :
+class Circulo:
+    def __init__(self, radio):
+        self.radio = radio
+
+    def calcular_area(self):
+        return 3.14 * self.radio ** 2
+
+-->Creando una instancia de la clase Circulo
+mi_circulo = Circulo(5)
+
+-->Llamando al método calcular_area()
+print(mi_circulo.calcular_area())  # Salida: 78.5
+
+###Indice de lista
+-->Definiendo una lista de colores
+colores = ["rojo", "verde", "azul", "amarillo"]
+
+-->Accediendo al elemento en el índice 2 (que es "azul")
+print(colores[2])  # Salida: azul
+
+###Filtros 
+https://docs.djangoproject.com/en/5.0/ref/templates/builtins/
+
+                <li>{{elTema  | first | lower }}</li>
+
+# Video 8 : Cagar Plantillas
+
+###cargar plantillas en vez de 
+doc_externo = open("/Users/ela/Desktop/DEVELOPER/DJANGO/LEARNING/djangoPildoras/djangoPildoras/plantillas/miplantilla.html"
+usar un cargador de plantillas
+
+.--> Es la url de como cargar varias plantillas sin necesidad de usar url tan largar : https://youtu.be/BcoPWMtmgJk?si=2gLuxvRRm9cgbzNP&t=867
+
+

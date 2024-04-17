@@ -54,7 +54,10 @@ ROOT_URLCONF = 'djangoPildoras.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+
+        # decir a django que todas nuestras plantillas van a estar alli 
+        'DIRS': ['/Users/ela/Desktop/DEVELOPER/DJANGO/LEARNING/djangoPildoras/djangoPildoras/plantillas'],
+
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -31,7 +31,7 @@ urlpatterns = [
     # una forma de pasar la url a entero > es poniendole ( : ) delante
     path('edades/<int:axo>', calculaEdad),
 
-    # Otra forma de de recibir paramtro por URL
+    # Otra forma de de recibir paramtro por URL 
     path('edades/<int:edad>/<int:axo>', calculaEdad_2)
     
 ]

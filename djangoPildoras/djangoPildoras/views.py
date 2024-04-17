@@ -3,6 +3,8 @@ import datetime
 
 from django.template import Template, Context
 
+from django.template.loader import get_template #sirve para cargar plantillas
+
 # usando la programacion orientada  a objetos 
 
 class Persona(object):
@@ -10,7 +12,7 @@ class Persona(object):
         self.nombre = nombre 
         self.apellido = apellido
         
-
+ 
 
 
 #Esta es una funcion vista o la primera vista
@@ -23,22 +25,34 @@ def saludo(request):
 
     # --> Comentamos todo eso para mostras lo siguiente
 
-    temas_del_curso = ["Plantillas", "Modelos", "Formularios", "Vistas", "Despliegues"]
+    temas_del_curso = ["Plantillas", "Modelos", "Formularios", "Vistas", "Despliegues"] #con informacion  : datos
+    # temas_del_curso = []  #vacio
 
     p1 = Persona("Profesor Juan", "Edaman")
 
     fecha_actual = datetime.datetime.now()
 
+    # doc_externo = open("/Users/ela/Desktop/DEVELOPER/DJANGO/LEARNING/djangoPildoras/djangoPildoras/plantillas/miplantilla.html")
+    # plantilla = Template(doc_externo.read())
+    # doc_externo.close()
+    # Contexto = Context({"nombre_persona":p1.nombre, "apellido_persona":p1.apellido, "hora_actual":fecha_actual,"temas":temas_del_curso})
+    # documento = plantilla.render(Contexto)
+    # return HttpResponse(documento)
 
-    doc_externo = open("/Users/ela/Desktop/DEVELOPER/DJANGO/LEARNING/djangoPildoras/djangoPildoras/plantillas/miplantilla.html")
+    """ pra no usar doc_externo = open("/Users/ela/Desktop/DEVELOPER/DJANGO/LEARNING/djangoPildoras/djangoPildoras/plantillas/miplantilla.html 
+    Podemmos usar un cargador de plantillas
 
-    # doc_externo = open("djangoPildoras/djangoPildoras/plantillas/miplantilla.html")
+    # Se hace de la siguiente forma 
+    
+    """ 
 
-    plantilla = Template(doc_externo.read())
-    doc_externo.close()
-    Contexto = Context({"nombre_persona":p1.nombre, "apellido_persona":p1.apellido, "hora_actual":fecha_actual,"temas":temas_del_curso})
-    documento = plantilla.render(Contexto)
-    return HttpResponse(documento)
+# CARGAR LA PLANTILLAA EXTERNA
+    doc_externo_cargar_plantilla = get_template('miplantilla.html')
+    rederizar_documento = doc_externo_cargar_plantilla.render({ "nombre_persona":p1.nombre, "apellido_persona":p1.apellido, "hora_actual":fecha_actual,"temas":temas_del_curso})
+    return HttpResponse(rederizar_documento)
+
+
+
  
 
 
