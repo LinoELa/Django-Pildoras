@@ -2,8 +2,12 @@ from django.http import HttpResponse
 import datetime
 
 from django.template import Template, Context
-
 from django.template.loader import get_template #sirve para cargar plantillas
+
+from django.shortcuts import render
+
+
+
 
 # usando la programacion orientada  a objetos 
 
@@ -46,16 +50,28 @@ def saludo(request):
     
     """ 
 
-# CARGAR LA PLANTILLAA EXTERNA
-    doc_externo_cargar_plantilla = get_template('miplantilla.html')
-    rederizar_documento = doc_externo_cargar_plantilla.render({ "nombre_persona":p1.nombre, "apellido_persona":p1.apellido, "hora_actual":fecha_actual,"temas":temas_del_curso})
-    return HttpResponse(rederizar_documento)
+# CARGAR LA PLANTILLAA EXTERNA : de forma 
+    # doc_externo_cargar_plantilla = get_template('miplantilla.html')
+    # rederizar_documento = doc_externo_cargar_plantilla.render({ "nombre_persona":p1.nombre, "apellido_persona":p1.apellido, "hora_actual":fecha_actual,"temas":temas_del_curso})
+    # return HttpResponse(rederizar_documento)
+
+# CARGAR LA PLANTILLAA EXTERNA II : de forma mas sencilla
+
+    return render (request, 'miplantilla.html',{ "nombre_persona":p1.nombre, "apellido_persona":p1.apellido, "hora_actual":fecha_actual,"temas":temas_del_curso})
 
 
 
  
 
+#Crear una nueva vista para las las las nuevas plantillas que heredan
 
+def cursoC(request):
+    fecha_actual = datetime.datetime.now()
+    return render(request, 'CursoC.html', {"dameFecha":fecha_actual})
+
+def cursoCss(request):
+    fecha_actual = datetime.datetime.now()
+    return render (request, "cursoCss.html", {"fecha_actual":fecha_actual})
 
 def despedida(request):
     return HttpResponse("Despedida")

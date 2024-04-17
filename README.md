@@ -96,7 +96,7 @@ https://docs.djangoproject.com/en/5.0/ref/templates/builtins/
 
                 <li>{{elTema  | first | lower }}</li>
 
-# Video 8 : Cagar Plantillas
+# Video 8 : Plantillas IV => Cargar plantillas
 
 ###cargar plantillas en vez de 
 doc_externo = open("/Users/ela/Desktop/DEVELOPER/DJANGO/LEARNING/djangoPildoras/djangoPildoras/plantillas/miplantilla.html"
@@ -105,3 +105,51 @@ usar un cargador de plantillas
 .--> Es la url de como cargar varias plantillas sin necesidad de usar url tan largar : https://youtu.be/BcoPWMtmgJk?si=2gLuxvRRm9cgbzNP&t=867
 
 
+# Video 9 : Plantillas V => Shortcuts & Plantillas uno dentro de otro 
+### Es la mejor forma de cargar plantillas 
+
+que veremos  ver 
+. simplificacion del codigo con paquetes shortcuts 
+. Plantillas incrustadas (plantillas dentro de plantillas)
+
+--> Pagina de shortcuts de django
+https://docs.djangoproject.com/en/5.0/topics/http/shortcuts/
+
+Es para saber como simplificar el codigo
+
+--> Cargar plantilla seria  <-- 
+from django.shortcuts import render
+
+    return render (request, 'miplantilla.html',{ "nombre_persona":p1.nombre, "apellido_persona":p1.apellido, "hora_actual":fecha_actual,"temas":temas_del_curso})
+
+--> Fin <-- 
+
+### Barra.html -> Plantillas incrustadas
+https://youtu.be/Opm8KKR99kQ?si=Pnzx0whkT6qlWNfI&t=277
+
+Cuando creamos una pagina y queremos que una barra aparezca en 20 paginas pues creamos esta barra en un html y lo incrustamos dentro de la plantilla.
+
+-> Creamos una nueva plantilla de nombre barra.html
+
+
+1. Creamos la pagina : barra.html
+2. Determinados donde queremos que aparezca 
+3. la incrustamos con {% include "barra.html" %} 
+    a. En caso que este dentro de una carpeta : {% include "superior/barra.html" %} 
+4. 
+
+
+
+
+
+
+
+# Video 10 : Herencia de plantillas 
+
+para decirle a una plantilla que tiene que heredar de una padre seria ponerle 
+
+-> {% extends "nombre_plantilla.html"%}
+
+Osa es como crear una pagina padre donde le podemos poner el nav y el footer y cada pagina que creemos desde ella  siempre llevara lo que hemos creado.
+
+-> Necesita mucha practica esta parte para entenderlo mejor

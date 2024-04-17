@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path
 
 #from <carpeta.archivo> import <funcion>,<funcion2>
-from djangoPildoras.views import saludo,despedida, dameFecha, calculaEdad, calculaEdad_2
+from djangoPildoras.views import saludo,despedida, dameFecha, calculaEdad, calculaEdad_2, cursoC, cursoCss
 
 
 urlpatterns = [
@@ -32,6 +32,13 @@ urlpatterns = [
     path('edades/<int:axo>', calculaEdad),
 
     # Otra forma de de recibir paramtro por URL 
-    path('edades/<int:edad>/<int:axo>', calculaEdad_2)
+    path('edades/<int:edad>/<int:axo>', calculaEdad_2),
+
+    #Vista del cursoC
+    path('cursoC', cursoC),
+
+
+    #Vista del cursoC
+    path('cursoCss', cursoCss)
     
 ]

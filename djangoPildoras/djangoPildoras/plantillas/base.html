@@ -1,0 +1,43 @@
+
+<!-- Plantilla padre  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <!-- Decirle que tiene que cambiar lo que va dentro del titulo -->
+        {% block title %} {%endblock%}
+    </title>
+
+    <style>
+        h1{
+            background-color: darkolivegreen;
+            color: white;
+            text-align: center;
+        }
+        p{
+            background-color: darkolivegreen;
+            color: white;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <!-- titulo comun -->
+    <h1>Tituo de la pagina : Pildoras Informaticas</h1>
+
+    <h3>Curso de Programacion</h3>
+    <!-- INCLUIR  la barra de navagaion en todas las paginas que tendria el padre-->
+    {% include "superior/barra.html" %}    
+    <!-- lo que cambiara -->
+    {% block content %}
+
+    {% endblock %}
+
+    <p>Cursos de Pildoras. Gracias por la visita</p>
+
+    
+</body>
+</html>
