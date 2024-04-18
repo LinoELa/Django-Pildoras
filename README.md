@@ -153,3 +153,72 @@ para decirle a una plantilla que tiene que heredar de una padre seria ponerle
 Osa es como crear una pagina padre donde le podemos poner el nav y el footer y cada pagina que creemos desde ella  siempre llevara lo que hemos creado.
 
 -> Necesita mucha practica esta parte para entenderlo mejor
+
+
+# Video 11 : BBDD
+
+--> Django trabaja con varios tipos de  bases de datos 
+
+1. SQLite 3 : Por defecto
+2. PostgreSQL : Gestor recomendado 
+3. MySQL
+4. Oracle 
+
+--> Con conectores ofrecidos por terceros 
+1. SQL Server 
+2. SAP SQL
+3. DB2
+4. Firebird
+5. Etc
+
+
+### Django distinque entre : Proyecto vs Apliacion 
+
+a. Proyecto 
+    ->(Tienda Online)
+    -> Conjunto de aplicaciones
+
+b. Apliacion 
+    . Forma parte de un proyecto , osea esta dentro del proyectoo
+    . Seria como 
+        -> Un panel de contro de una web 
+        -> Gestion de pagos
+        -> Gestion de envios 
+        -> Almacen Stock 
+        -> Se encarga de las promocines 
+
+
+
+
+### Proyecto - Ejemplo 
+
+-> Tienda Online 
+
+    --> App GestionPedidos 
+
+        --> Tabla Cliente 
+            . Nombre 
+            . Direccion
+            . Email
+            .Tfno 
+
+        --> Tabla Articulos 
+            . Nombre 
+            . Seccion 
+            . Precio 
+
+        --> Tabla Pedidos 
+            . N_Pedido
+            . Fechas 
+            . Entregado
+
+
+#### Como crear las tablas 
+
+--> APliacion (Dentro incluimos)
+
+    --> Clase Model (Dentro incluimos las tablas )
+
+        --> Tabla Clientes 
+        --> Tabla Articulos 
+        --> Tabla Pedidos
