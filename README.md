@@ -233,5 +233,35 @@ Es como se crea la apliacion y los primeros pasos a dar.
 
 1. Despues de crear la aplicacion seguir 
 2. "Models.py" crear las vistas 
-3. "Settings.py"  registrar ren "INSTALLED_APP" las apliacion que he creado
+3. "Settings.py"  registrar en "INSTALLED_APP" las apliacion que he creado
+4. Para comprobar si todo va bien  desde la pagina de la aplicacion se puede poder donde esta el :  TiendaOnline gestionPedidos & Manage.py
+    ==> python manage.py check gestionPedidos 
+        . solucion: System check identified no issues (0 silenced).
+        . Quiere deicir que todo esa bien
+
+
+5. Creamos la base de datos con las tablas que hemos hecho antes de 
+    . Clientes . Articulos . Pedidos
+
+    ==> python manage.py makemigrations
+        . solucion :
+        Migrations for 'gestionPedidos':
+            gestionPedidos/migrations/0001_initial.py
+                - Create model Articulos
+                - Create model Clientes
+                - Create model Pedidos
+
+    1 --> Con eso creamos la base de dato
+
+
+    --> Luego de decimos a django que genere el codigo para hacer meterle las tablas 
+        ==> python manage.py sqlmigrate gestionPedidos (numero de migracion  : ahora :0001)
+
+        . Ahora tiene que aparecer en consola todas la instrucciones para crear tablas y que ya se a creado.
+
+    2 --> Ahora hay que decirle que las tabla creadas que la meta en la base de datos
+        ==>  python manage.py migrate
+
+        .ahora si que ya tiene las tablas y todo dentro.
+
 
