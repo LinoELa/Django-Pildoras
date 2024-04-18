@@ -215,10 +215,23 @@ b. Apliacion
 
 #### Como crear las tablas 
 
---> APliacion (Dentro incluimos)
+--> Apliacion (Dentro incluimos)
 
     --> Clase Model (Dentro incluimos las tablas )
 
         --> Tabla Clientes 
         --> Tabla Articulos 
         --> Tabla Pedidos
+
+
+Es bueno crear apliaciones para administrar mejor un proyecto 
+
+
+# Video 12 : BBDD II 
+
+Es como se crea la apliacion y los primeros pasos a dar.
+
+1. Despues de crear la aplicacion seguir 
+2. "Models.py" crear las vistas 
+3. "Settings.py"  registrar ren "INSTALLED_APP" las apliacion que he creado
+
