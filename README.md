@@ -265,3 +265,64 @@ Es como se crea la apliacion y los primeros pasos a dar.
         .ahora si que ya tiene las tablas y todo dentro.
 
 
+# Video 13 : BBDD III
+
+Vamos a ver 
+
+1.  Como insertar registros en la base de datos 
+2. Actualizar registros 
+3.  Borrar registros 
+
+
+## 1  Insertar registros
+--> Lo vamos hacer todo desde la consola.  Para acceder ponemos
+
+    ==> python manage.py shell
+
+    . Para meter la primera informacion en  la tabla mesa ponemor en shell
+
+--> 1 Meter articulo 1 
+
+    ==> from gestionPedidos.models import Articulos
+
+    ==> art = Articulos (nombre = 'mesa', seccion = 'decoracion', precio = 90)
+
+    ==>  art.save()
+
+ --> 2 Meter articulo 2 
+
+     ==> art2 = Articulos (nombre = 'camisa', seccion = 'confeccion' , precio = 75)
+
+    ==> art2.save()
+
+--> 3 Meter un nuevo articulo de una nueva forma
+    ==> art3 = Articulos.objects.create (nombre='taladro', seccion = 'ferreteria', precio = 65)
+
+
+    
+
+## 2 Actulizar registro 
+    ==>art.precio = 95
+
+    ==>art.save()  
+
+
+## 3 Borrar registro 
+Dentro del parentesis especificar criterios, en este caso id = 2 
+    ==>art5 = Articulos.objects.get(id=2)
+
+    ==> art5.delete()
+    .salida o silucion
+        . (1, {'gestionPedidos.Articulos': 1})
+
+## Consultas o ver una Query (select)
+
+--> Crear una variable que sea y dentro hacer la consulta 
+ en este caso : LISTA
+
+    ==> lista = Articulos.objects.all()
+    ==> lista
+
+    . para verlo en el tipo select
+
+    ==> lista.query.__str__()
