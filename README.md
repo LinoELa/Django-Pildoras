@@ -326,3 +326,157 @@ Dentro del parentesis especificar criterios, en este caso id = 2
     . para verlo en el tipo select
 
     ==> lista.query.__str__()
+
+
+
+# Video 14 :  PostgreSQL en local
+
+### Como usar PostgreSQL
+https://www.youtube.com/watch?v=UjQiwonRMas
+
+
+https://youtu.be/jMPTz5NWIPY?list=PLU8oAlHdN5BmfvwxFO7HdPciOCmmYneAB
+
+1.  Como configurar Django con PostgreSQL en local
+
+Es open source
+
+Primero vamos a necesitar una interfaz 
+
+--> El modo de uso esta en este video : 
+https://youtu.be/jMPTz5NWIPY?list=PLU8oAlHdN5BmfvwxFO7HdPciOCmmYneAB
+
+--> Intrucir registros y datos 
+    Para hacerlo
+    1.  Tenemos que conectar la base de datos con nuestro proyecto
+    2. Para hacerlo tenemos que instalar la una libreria : --> PSYCOPG2 <--
+    3. Para instalarla vamos a al directorio del proyecto en este caso : 
+        . TiendaOnline 
+        introducimos  :
+        ==> pip install psycopg2
+
+        A. --> Si hay un error pues usar <--
+
+        ==> brew install postgresql
+        ==> pg_config --version
+        ==> pip install psycopg2
+
+2. Cambiar la  configuracion en settings.py para que nuestra proyecto en django se conecte con esta base de datos 
+
+--> Como se hace ?
+
+Pues en settings.py cambiar el ENGINE , NAME  y AGREGAR unos parametros  mas dentro del DATABSES de settings.py
+
+--> settigs.py antiguo <-- 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+} 
+
+--> settigs.py NUEVO <-- 
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'ArticulosClientes',
+        'USER': 'postgres',
+        'PASSWORD': '123456789',
+        'HOST': '127.0.0.1',
+        'DATABASE': '5432',
+    }
+}
+
+--> AHORA LO MISMO QUE SQLite3 <-- 
+1. Creamos las tablas 
+
+# Video 15 - 20 : Panel del Administracion
+
+Hablan del todo  lo que se puede hacer en el panel de administracion , asi como las se puedee añadir o n usuarios, 
+filtros , y mas cosas. 
+
+# Video 21 : Formularios I
+https://youtu.be/B840ou6pcjg?si=zewOem43KnVF4QMn
+
+
+--> Trabajos con formularios 
+    -> Creacion de formularios (Manual) y envio de datos al servidor
+        -> Objetos HttpResponse
+
+
+        Request : es para enviar una informacion al servidor 
+        el servidor puede manipular el elemento request
+
+        Pigina principal 
+        https://docs.djangoproject.com/en/5.0/ref/request-response/
+
+
+        Los dos metodos principales son 
+        1.  Get 
+        2.  Post
+
+        Como enviar documentos a otra pagina 
+
+        AL final de todo hemos aprendido como introducir informacion a un formulario y que este formulario viaje a travez del servidor. 
+
+
+# Video 22: Formulario II
+
+--> Ya que en el video 21 vimos como introducir informacion a un formulario y que este formulario viaje a travz del servidor , pues esta clase va de : 
+
+1. Como Buscar informacion en una base de datos.
+    la informacion viene del formulario.
+
+    Conseguimos acceder a la base de datos y recoger infacion almacenada en ella y poder motrarlo en la en la vista 
+
+# Video 23 : Formulario III
+
+1.  Limitar el numero de caracteres o letras o longitud en formularios a buscar en BBDD 
+
+2.  Crear un formulario de contacto (1å Parte)
+
+
+Limitar la longitud seria : 
+
+=> if len(producto ) > 20: 
+    mensaje = 'Texto demasiado largo'
+else : 
+    lo que de verdad queiro que se veas 
+
+--- 
+
+
+--> Vamos a configurar el servidor de pruebas para que sea capaz de enviarlos un correo electronico 
+
+# Video 24 : EMAIL
+
+--> Envio de Email con Django 
+
+usaremos un una librerias 
+
+    -> CORE.MAIL
+
+
+1. Tenemos que buscar un servidor para enviar correos 
+2. Configurar el correo electronico para que pueda enviar mensaje  desde sercicios de terceros
+3. Configuar Email en Django 
+
+
+# Video 25 : API Forms
+https://docs.djangoproject.com/en/5.0/ref/forms/api/
+
+Lo que nos ayuda es en simplificar mucho la creacion de un formulario 
+y la Email sera validada
+
+La API Forms ayuda a validar el correo para que no nos llegue spam
+
+
+--> Se tiene que crear un archivo llamado FORMS
+y dentro importamos forms 
+
+==> from django import forms 
+
+--> Es mejor utiliarlo <--
+
+
